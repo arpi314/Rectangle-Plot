@@ -2,16 +2,17 @@
 
 using namespace std;
 
-class Rectangle{
+class Rectangle{ //contains values and functions for a rectangle
     
     int inputX, inputY;
 
-    class Point{
+    class Point{ //holds x and y values for coordinates in a plane
         private: 
             int x, y;
         public:
+            //constructor
             Point() {
-                setPoint(0, 0);
+                setPoint(0, 0); //initialize to null if there is no input
             }
             Point(int x, int y){
                 setPoint(x, y);
@@ -34,11 +35,11 @@ class Rectangle{
     public: 
         Point start, end;
         Rectangle(int x1, int y1, int x2, int y2){
-            start = Point(x1, y1);
+            start = Point(x1, y1); //create two points
             end = Point(x2, y2);
         }
     
-         void display(){
+         void display(){ //prints the rectangle based on placed values
 
             int row1 = start.getx();
             int col1 = start.gety();
@@ -75,8 +76,8 @@ class Rectangle{
             
         }
 
-        int area(){
-            int row1 = start.getx();
+        int area(){ //calculates the area of the rectangle [length*width]
+            int row1 = start.getx(); 
             int col1 = start.gety();
             int row2 = end.getx();
             int col2 = end.gety();
@@ -101,7 +102,7 @@ class Rectangle{
             return row*col;
         }
 
-        int perimeter(){
+        int perimeter(){ //calculates the perimeter of the rectangle [2*length + 2*width]
             int row1 = start.getx();
             int col1 = start.gety();
             int row2 = end.getx();
@@ -127,7 +128,7 @@ class Rectangle{
             return ((2*row) + (2*col)); 
         }
 
-        void centerPoint(){
+        void centerPoint(){ //calculates center point [length1+length2 / 2, width1+width2/2]
             
             float row1 = start.getx();
             float col1 = start.gety();
@@ -140,7 +141,7 @@ class Rectangle{
             printf("(%.2f, %.2f)", xCenter, yCenter);
         }
 
-        bool square(){
+        bool square(){ //determines if it is a square or not
             int row1 = start.getx();
             int col1 = start.gety();
             int row2 = end.getx();
